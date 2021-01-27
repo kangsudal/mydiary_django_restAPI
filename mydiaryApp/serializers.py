@@ -4,4 +4,4 @@ from .models import Corpus
 class CorpusSerializer(serializers.ModelSerializer):
     class Meta:
         model = Corpus
-        fields = ('author','title', 'created_at','published_at','ticker','content')
+        fields = ('author','title', 'created_date','published_date','ticker','content')
