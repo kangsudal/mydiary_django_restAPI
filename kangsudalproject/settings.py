@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'todoApp',
     'mydiaryApp',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
