@@ -12,7 +12,7 @@ import random
 def helloAPI(request):
     return Response("hey kkakkung!");
 
-# [ ]를 입력받았을때 [  ]를 반환해주는 API
+# [개수]를 입력받았을때 [ 랜덤 말뭉치]를 반환해주는 API
 @api_view(['GET'])
 def randomCorpusAPI(request,id):
     totalCorpuses = Corpus.objects.all()
@@ -20,6 +20,15 @@ def randomCorpusAPI(request,id):
     serializer = CorpusSerializer(randomCorpuses, many=True) #many=True는 다량의 데이터도 직렬화가능하게해준다
     return Response(serializer.data)
     # return Response("hey kkakkung!");
+
+# [ ]를 입력받았을때 [ ]를 반환해주는 API
+@api_view(['GET'])
+def totalCorpusAPI(request):
+    totalCorpuses = Corpus.objects.all()
+    serializer = CorpusSerializer(totalCorpuses, many=True) #many=True는 다량의 데이터도 직렬화가능하게해준다
+    return Response(serializer.data)
+    # return Response("hey kkakkung!");
+
 
 # def post_list(request):
 #     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
